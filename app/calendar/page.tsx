@@ -2,6 +2,8 @@ import { getLessons } from "@/app/actions/lessons";
 import { getStudents } from "@/app/actions/students";
 import CalendarView from "@/components/CalendarView";
 
+export const dynamic = 'force-dynamic';
+
 export default async function CalendarPage() {
     const lessons = await getLessons();
     const students = await getStudents();

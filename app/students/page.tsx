@@ -4,6 +4,8 @@ import SearchInput from "@/components/SearchInput";
 import { getStudents } from "@/app/actions/students";
 import StudentAvatar from "@/components/StudentAvatar";
 
+export const dynamic = 'force-dynamic';
+
 export default async function StudentsPage({
     searchParams,
 }: {

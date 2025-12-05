@@ -3,6 +3,8 @@ import { getPayments } from "@/app/actions/payments";
 import PaymentsList from "@/components/PaymentsList";
 import BottomNav from "@/components/BottomNav";
 
+export const dynamic = 'force-dynamic';
+
 export default async function PaymentsPage() {
     const payments = await getPayments();
 
