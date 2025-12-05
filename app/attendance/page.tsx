@@ -3,6 +3,8 @@ import { getLessonById } from "@/app/actions/lessons";
 import AttendanceForm from "@/components/AttendanceForm";
 import { redirect } from "next/navigation";
 
+export const dynamic = 'force-dynamic';
+
 export default async function AttendancePage({ searchParams }: { searchParams: { id?: string } }) {
     const students = await getStudents();
 
