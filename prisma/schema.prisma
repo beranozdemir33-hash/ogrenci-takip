@@ -1,0 +1,47 @@
+datasource db {
+  provider = "postgresql"
+  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Student {
+  id        Int       @id @default(autoincrement())
+  name      String
+  email     String?
+  phone     String?
+  image     String?   @default("")
+  grade     String?   // Used for Lesson Subject
+  price     Float?    @default(0) // Lesson Fee
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  
+  lessons   Lesson[]
+  payments  Payment[]
+}
+
+model Lesson {
+  id        Int      @id @default(autoincrement())
+  studentId Int
+  student   Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  date      String   // Keeping as String "YYYY-MM-DD" for frontend compatibility
+  time      String   // "HH:MM - HH:MM"
+  subject   String
+  topic     String?
+  homework  String?
+  teacher   String?
+  status    String   // "scheduled", "completed", "cancelled"
+}
+
+model Payment {
+  id        Int      @id @default(autoincrement())
+  studentId Int
+  student   Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  amount    Float
+  date      String   // ISO Date string
+  status    String   // "pending", "completed", "overdue"
+  subject   String?
+}

@@ -1,0 +1,46 @@
+{
+  "students": [
+    {
+      "name": "Beran Ozdemir",
+      "email": "beran.ozdemir33@gmail.com",
+      "phone": "05552670355",
+      "image": "",
+      "grade": "Keman",
+      "id": 1,
+      "createdAt": "2025-12-05T20:35:12.012Z",
+      "updatedAt": "2025-12-05T20:56:06.397Z",
+      "price": 1000
+    }
+  ],
+  "lessons": [
+    {
+      "date": "2025-12-06",
+      "time": "00:20 - 00:30",
+      "subject": "Keman",
+      "teacher": "Öğretmen",
+      "status": "scheduled",
+      "studentId": 1,
+      "id": 1
+    },
+    {
+      "date": "2025-12-05",
+      "time": "23:50 - 00:00",
+      "subject": "Keman",
+      "teacher": "Öğretmen",
+      "status": "completed",
+      "studentId": 1,
+      "id": 2,
+      "homework": ""
+    }
+  ],
+  "payments": [
+    {
+      "studentId": 1,
+      "amount": 500,
+      "subject": "Ders: Keman",
+      "date": "2025-12-05",
+      "status": "completed",
+      "id": 1
+    }
+  ]
+}
